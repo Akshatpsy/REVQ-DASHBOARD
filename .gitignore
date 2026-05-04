@@ -1,6 +1,6 @@
 node_modules/
 .env
-revq.db
+*.db
 .DS_Store
 dist/
 build/

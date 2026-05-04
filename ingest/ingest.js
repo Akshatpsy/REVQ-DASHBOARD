@@ -121,7 +121,15 @@ async function ingestFile(filePath, platformType) {
         console.log(`[${platform}] Processing: ${rawName}`);
 
         try {
-            const row = await dbGet(`SELECT id, name FROM products WHERE normalized_name LIKE ?`, [`%${normalized}%`]);
+            const row = await dbGet(`
+                SELECT p.id, p.name 
+                FROM products p
+                JOIN platform_products pp ON p.id = pp.product_id
+                WHERE p.normalized_name = ? 
+                  AND pp.pack_size = ? 
+                  AND (pp.weight = ? OR (pp.weight IS NULL AND ? IS NULL))
+                LIMIT 1
+            `, [normalized, packSize, weight, weight]);
 
             const insertPlatform = async (productId) => {
                 try {

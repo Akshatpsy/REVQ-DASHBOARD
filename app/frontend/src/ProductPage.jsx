@@ -12,7 +12,7 @@ const ProductPage = () => {
       try {
         setLoading(true);
 
-        const response = await fetch(`http://localhost:3000/api/product/${id}`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/product/${id}`);
         if (!response.ok) {
           throw new Error('Product not found');
         }

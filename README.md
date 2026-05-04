@@ -2,6 +2,13 @@
 
 This project is my submission for the RevQ Dashboard exercise. It consists of a robust data ingestion pipeline built in Node.js, a lightweight Express API, and a React (Vite) frontend for displaying cross-platform product comparisons.
 
+## Key Highlights
+
+- Cross-platform product normalization engine
+- Real-time price comparison across 3 platforms
+- Intelligent availability aggregation per pincode
+- Scalable schema with indexing strategy
+
 ## How to Run
 
 1. **Database & Ingestion (Optional, pre-populated)**

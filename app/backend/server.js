@@ -48,7 +48,9 @@ app.get('/api/product/:id', (req, res) => {
                     p.scraped_at,
 
                     COUNT(a.pincode) as total_pincodes,
-                    SUM(CASE WHEN a.in_stock = 1 THEN 1 ELSE 0 END) as in_stock_count
+                    SUM(CASE WHEN a.in_stock = 1 THEN 1 ELSE 0 END) as in_stock_count,
+                    GROUP_CONCAT(CASE WHEN a.in_stock = 1 THEN a.pincode ELSE NULL END) as available_pincodes,
+                    GROUP_CONCAT(CASE WHEN a.in_stock = 0 THEN a.pincode ELSE NULL END) as out_of_stock_pincodes
 
                 FROM platform_products pp
 
@@ -60,7 +62,7 @@ app.get('/api/product/:id', (req, res) => {
 
                 WHERE pp.product_id = ?
                 
-                GROUP BY pp.id
+                GROUP BY pp.platform
                 `,
                 [productId],
                 (err, rows) => {
@@ -81,7 +83,9 @@ app.get('/api/product/:id', (req, res) => {
                         discount: Number(r.discount_percent?.toFixed(2)),
                         availability: {
                             available: r.in_stock_count,
-                            total: r.total_pincodes
+                            total: r.total_pincodes,
+                            available_pincodes: r.available_pincodes ? r.available_pincodes.split(',') : [],
+                            out_of_stock_pincodes: r.out_of_stock_pincodes ? r.out_of_stock_pincodes.split(',') : []
                         },
                         last_scraped: r.scraped_at
                     }));
