@@ -1,0 +1,31 @@
+{
+  "fetched_on": "2026-05-04T10:00:00Z",
+  "items": [
+    {
+      "title": "Yogabar Multigrain Energy Bar",
+      "sku_code": "Z001",
+      "image": "http://example.com/zepto1.jpg",
+      "price": {
+        "final": 42.0,
+        "mrp": 50.0
+      },
+      "stock_by_pincode": {
+        "110001": "available",
+        "110002": "out_of_stock"
+      }
+    },
+    {
+      "title": "Yogabar Dark Choco Peanut Butter 400g",
+      "sku_code": "Z002",
+      "image": "http://example.com/zepto2.jpg",
+      "price": {
+        "final": 280.0,
+        "mrp": 350.0
+      },
+      "stock_by_pincode": {
+        "110001": "available",
+        "110002": "available"
+      }
+    }
+  ]
+}

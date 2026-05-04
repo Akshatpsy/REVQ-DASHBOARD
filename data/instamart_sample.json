@@ -1,0 +1,27 @@
+{
+  "snapshot_time": "1777888800",
+  "results": [
+    {
+      "display_name": "Yoga Bar Multigrain Energy Bar - 50g",
+      "product_id": "IM111",
+      "image": "http://example.com/instamart_img1.jpg",
+      "store_selling_price": 45.0,
+      "store_mrp": 50.0,
+      "store_availability": [
+        {"pin": "110001", "available_qty": 5},
+        {"pin": "110002", "available_qty": 2}
+      ]
+    },
+    {
+      "display_name": "Yogabar Crunchy Peanut Butter",
+      "product_id": "IM222",
+      "image": "http://example.com/instamart_img2.jpg",
+      "store_selling_price": 130.0,
+      "store_mrp": 150.0,
+      "store_availability": [
+        {"pin": "110001", "available_qty": 10},
+        {"pin": "110002", "available_qty": 0}
+      ]
+    }
+  ]
+}

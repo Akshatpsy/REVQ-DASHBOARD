@@ -1,0 +1,28 @@
+{
+  "platform": "blinkit",
+  "scraped_at": "2026-05-04T10:00:00Z",
+  "products": [
+    {
+      "name": "Yogabar Dark Chocolate Peanut Butter",
+      "blinkit_id": "B67890",
+      "image_url": "http://example.com/image2.jpg",
+      "selling_price": 250.0,
+      "mrp": 300.0,
+      "availability": [
+        {"pincode": "110001", "in_stock": true},
+        {"pincode": "110002", "in_stock": false}
+      ]
+    },
+    {
+      "name": "Yogabar Multigrain Energy Bar",
+      "blinkit_id": "B12345",
+      "image_url": "http://example.com/image1.jpg",
+      "selling_price": 40.0,
+      "mrp": 50.0,
+      "availability": [
+        {"pincode": "110001", "in_stock": true},
+        {"pincode": "110002", "in_stock": false}
+      ]
+    }
+  ]
+}
